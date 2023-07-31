@@ -62,7 +62,7 @@ To get a local copy up and running, follow these steps:
 - Choose a directory
 - Open a Terminal
 - write git clone https://github.com/Wineshuga/Tvmaze-capstone
-- get into to directory "Leaderboard"
+- get into to directory "Tvmaze-capstone"
 - write: npm install
 
 
