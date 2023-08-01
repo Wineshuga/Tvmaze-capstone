@@ -115,7 +115,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/api.js */ \"./src/modules/api.js\");\n/* harmony import */ var _modules_displaying_data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/displaying-data.js */ \"./src/modules/displaying-data.js\");\n/* harmony import */ var _modules_eventListeners_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/eventListeners.js */ \"./src/modules/eventListeners.js\");\n\n\n\n\n\n(async () => {\n  const displayData = await (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  (0,_modules_displaying_data_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(displayData);\n  (0,_modules_eventListeners_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n})();\n\n\n//# sourceURL=webpack://Tvmaze-capstone/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/api.js */ \"./src/modules/api.js\");\n/* harmony import */ var _modules_displaying_data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/displaying-data.js */ \"./src/modules/displaying-data.js\");\n/* harmony import */ var _modules_eventListeners_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/eventListeners.js */ \"./src/modules/eventListeners.js\");\n/* harmony import */ var _modules_involvementAPI_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/involvementAPI.js */ \"./src/modules/involvementAPI.js\");\n/* harmony import */ var _modules_postLike_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/postLike.js */ \"./src/modules/postLike.js\");\n\n\n\n\n\n\n\nconst likes = 0;\n\nconst uniqueId = async () => {\n  if (localStorage.getItem('uniqueId')) {\n    return localStorage.getItem('uniqueId');\n  }\n  const newAppId = await (0,_modules_involvementAPI_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n  return newAppId;\n};\n\nconst main = async () => {\n  const newAppId = await uniqueId();\n\n  const displayData = await (0,_modules_api_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n  (0,_modules_displaying_data_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(displayData);\n  (0,_modules_eventListeners_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n\n  const item1 = localStorage.getItem('uniqueId');\n\n  (0,_modules_postLike_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"])(newAppId, item1, likes);\n};\n\nmain();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (uniqueId);\n\n\n//# sourceURL=webpack://Tvmaze-capstone/./src/index.js?");
 
 /***/ }),
 
@@ -146,6 +146,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ seeMoreBtn)\n/* harmony export */ });\nfunction seeMoreBtn() {\n  const seeMore = document.getElementById('see-more');\n  let isHiddenVisible = false;\n\n  seeMore.addEventListener('click', () => {\n    const hidden = document.querySelectorAll('.hidden');\n    hidden.forEach((individual) => {\n      individual.classList.toggle('visible');\n    });\n\n    isHiddenVisible = !isHiddenVisible;\n\n    if (isHiddenVisible) {\n      seeMore.innerHTML = 'SEE LESS';\n    } else {\n      seeMore.innerHTML = 'SEE MORE';\n    }\n  });\n}\n\n\n//# sourceURL=webpack://Tvmaze-capstone/./src/modules/eventListeners.js?");
+
+/***/ }),
+
+/***/ "./src/modules/involvementAPI.js":
+/*!***************************************!*\
+  !*** ./src/modules/involvementAPI.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst createNewApp = async (item1) => {\n  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';\n  const endpoint = `${url}apps/`;\n\n  const requestData = {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      item_id: item1,\n    }),\n  };\n\n  const response = await fetch(endpoint, requestData);\n  const uniqueId = await response.text();\n  console.log(uniqueId);\n  localStorage.setItem('uniqueId', uniqueId);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createNewApp);\n\n\n//# sourceURL=webpack://Tvmaze-capstone/./src/modules/involvementAPI.js?");
+
+/***/ }),
+
+/***/ "./src/modules/postLike.js":
+/*!*********************************!*\
+  !*** ./src/modules/postLike.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postLike = async (newAppId, likes, episodes) => {\n  const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${newAppId}/likes`;\n\n  const item1 = episodes.id\n\n\n  const requestData = {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      item_id: item1,\n      likes: likes,\n    }),\n  };\n\n  const response = await fetch(likesUrl, requestData);\n  console.log(response);\n  const responseData = await response.json();\n  console.log('Response:', responseData);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postLike);\n\n\n//# sourceURL=webpack://Tvmaze-capstone/./src/modules/postLike.js?");
 
 /***/ })
 

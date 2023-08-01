@@ -1,12 +1,14 @@
-const postLike = async () => {
-    const likeIcon = document.querySelectorAll('.fa-heart');
+import postLike from './postLike.js';
 
-    function iconClicked(event) {
-        let icon = event.target;
-        icon.style.color = 'red';
-    }
+const updateLike = async (likes, item1) => {
+  const likeIcon = document.querySelectorAll('.fa-heart');
 
-    likeIcon.forEach(individualIcon => {
-        individualIcon.addEventListener('click', iconClicked);
-    });
+  function iconClicked(event) {
+    const icon = event.target;
+    icon.style.color = 'red';
+  }
+
+  likeIcon.forEach((individualIcon) => {
+    individualIcon.addEventListener('click', iconClicked);
+  });
 };

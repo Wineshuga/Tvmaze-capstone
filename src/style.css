@@ -45,3 +45,9 @@ button {
 .visible {
   display: flex;
 }
+
+.fa-heart {
+  color: lightslategray;
+  font-size: 1.5rem;
+  padding: 1rem;
+}

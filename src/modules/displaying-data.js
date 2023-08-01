@@ -14,9 +14,7 @@ export default function displayEpisodesData(displayData) {
     imageElement.alt = individualEpisode.name;
 
     const pElement = document.createElement('p');
-    // instead of word rating, add icon that Winni found
-    pElement.textContent = `${individualEpisode.name} - Rating: ${individualEpisode.rating.average}`;
-
+    pElement.innerHTML = `${individualEpisode.name}` + '<i class="fas fa-heart"></i>';
     const commentsBtn = document.createElement('button');
     commentsBtn.className = 'comments';
     commentsBtn.innerHTML = 'Comments';
