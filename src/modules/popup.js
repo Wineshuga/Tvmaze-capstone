@@ -4,11 +4,29 @@ const popup = (indx, episodeData) => {
     if (index === indx) {
       popupContainer.innerHTML = `
       <i class="fa-solid fa-xmark close-icon"></i>
-      <img src=${episode.image.original} alt=${episode.name}>
-      <h3>${episode.name}</h3>
-      <p>${episode.summary}</p>
-      <p>No. of Seasons: ${episode.season}</p>
-      <p>Rating: ${episode.rating.average}</p>
+      <div>
+        <img src=${episode.image.original} alt=${episode.name}>
+        <h2>${episode.name}</h2>
+        <p><strong>Summary</strong>: ${episode.summary}</p>
+        <ul>
+          <li><strong>No. of Seasons</strong>: ${episode.season}</li>
+          <li><strong>Rating</strong>: ${episode.rating.average}</li>
+        </ul>
+        <section class='comment-box'>
+        <h2>Comments (<span>0</span>)</h2>
+        <ul>
+          <li>03/04/2023 Agneta: This is my favorite episode</li>
+          <li>06/04/2023 Winnie: Fantastic!</li>
+        </ul>
+
+        <h2>Add a Comment</h2>
+        <form class='comment-form'>
+          <input type='text' name='name' id='name' placeholder='Your name'>
+          <textarea col=30 rows='10' name='insights' placeholder='Your insights'></textarea>
+          <input type='button' value='Comment'>
+        </form>
+      </section>
+      </div>
     `;
     }
   });
