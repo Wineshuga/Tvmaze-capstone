@@ -53,15 +53,15 @@ button {
 }
 
 .episodes-div > p {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .like-count {
-    color: black;
-    font-size: 0.7rem;
-    padding: 0 15px 0 15px;;
+  color: black;
+  font-size: 0.7rem;
+  padding: 0 15px 0 15px;
 }
 
 .fa-heart.active {
-    color: red;
- }
+  color: red;
+}
