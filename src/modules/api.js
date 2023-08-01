@@ -7,7 +7,10 @@ const fetchEpisodes = async () => {
         id: episode.id,
         name: episode.name,
         image: episode.image, 
-        rating: episode.rating
+        rating: episode.rating,
+        summary: episode.summary,
+        season: episode.season,
+        airdate: episode.airdate
       }));
       
       console.log(episodesData);
