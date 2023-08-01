@@ -20,8 +20,47 @@ footer {
   background-color: #f0f0f0;
   padding: 1rem;
   text-align: center;
-  position: fixed;
   bottom: 0;
   width: 100%;
   font-family: 'Lora', serif;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.episodes-div {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+button {
+  box-shadow: 1px 1px 3px black;
+  width: 7rem;
+}
+
+#see-more {
+  grid-column: 1 /span 3;
+  height: 3rem;
+  width: 15rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: flex;
 }
