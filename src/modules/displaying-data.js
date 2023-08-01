@@ -1,3 +1,5 @@
+import popup from './popup.js';
+
 export default function displayEpisodesData(displayData) {
   const episodesSection = document.getElementById('main-container');
 
@@ -32,4 +34,15 @@ export default function displayEpisodesData(displayData) {
   seeMore.id = 'see-more';
   seeMore.innerHTML = 'SEE MORE';
   episodesSection.appendChild(seeMore);
+
+  const commentsBtn = document.querySelectorAll('.comments');
+  const popupContainer = document.createElement('section');
+  popupContainer.className = 'popup--hide';
+  episodesSection.appendChild(popupContainer);
+
+  commentsBtn.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      popup(index, displayData);
+    });
+  });
 }
