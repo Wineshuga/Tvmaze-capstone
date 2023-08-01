@@ -5,7 +5,7 @@ import seeMoreBtn from './modules/eventListeners.js';
 import createNewApp from './modules/involvementAPI.js';
 import postLike from './modules/postLike.js';
 
-const likes = 5;
+const likes = 0;
 
 const uniqueId = async () => {
   if (localStorage.getItem('uniqueId')) {

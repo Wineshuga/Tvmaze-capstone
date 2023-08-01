@@ -8,7 +8,7 @@ const postLike = async (newAppId, item1, likes) => {
     },
     body: JSON.stringify({
       item_id: item1,
-      likes,
+      likes: likes,
     }),
   };
 
