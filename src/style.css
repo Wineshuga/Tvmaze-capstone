@@ -26,6 +26,10 @@ header {
   padding: 1rem;
 }
 
+.logo-img {
+  width: 6rem;
+}
+
 .nav--lists {
   display: flex;
   gap: 3rem;
