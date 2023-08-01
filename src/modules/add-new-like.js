@@ -8,7 +8,7 @@ const updateLike = async ( item1) => {
   function iconClicked(event) {
     const icon = event.target;
     icon.classList.toggle('active');
-    let pElement = icon.parentNode;
+    const pElement = icon.parentNode;
     const likeCountElement = pElement.querySelector('.like-count');
     if (icon.className === 'fas fa-heart active'){
     likes++;
@@ -16,9 +16,11 @@ const updateLike = async ( item1) => {
     } else if (icon.className === 'fas fa-heart'){
         likes--;
         likeCountElement.textContent = likes;
-
     }
   }
+
+  postLike(item1, likes);
+
 
   likeIcon.forEach((individualIcon) => {
     individualIcon.addEventListener('click', iconClicked);

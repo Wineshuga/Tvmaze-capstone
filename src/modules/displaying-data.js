@@ -15,6 +15,7 @@ export default function displayEpisodesData(displayData) {
 
     const pElement = document.createElement('p');
     pElement.innerHTML = `${individualEpisode.name}` + '<i class="fas fa-heart"><span class="like-count">0</span></i>';
+    pElement.className = `${individualEpisode.id}`;
     const commentsBtn = document.createElement('button');
     commentsBtn.className = 'comments';
     commentsBtn.innerHTML = 'Comments';
