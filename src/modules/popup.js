@@ -1,4 +1,4 @@
-import addComments from './commentApi.js';
+import { addComments, getComments } from './commentApi.js';
 
 const popup = (indx, episodeData) => {
   const popupContainer = document.querySelector('.popup--hide');
@@ -56,6 +56,8 @@ const popup = (indx, episodeData) => {
         comment: userMsg.value,
       };
       addComments(newComment);
+      const comments = getComments(formIndex);
+      console.log(comments);
       userName.value = '';
       userMsg.value = '';
       console.log(newComment);
