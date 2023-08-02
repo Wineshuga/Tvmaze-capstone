@@ -15,6 +15,8 @@ const main = async () => {
 
 main();
 
+export default uniqueId;
+
 // const headerLogo = document.querySelector('#logo');
 // headerLogo.className = 'logo-img';
 // headerLogo.src = Logo;
