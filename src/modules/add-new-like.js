@@ -7,8 +7,7 @@ const updateLike = async () => {
     const icon = event.target;
     const pElement = icon.parentNode;
     const likeCountElement = pElement.querySelector('.like-count');
-
-    let likes = parseInt(icon.dataset.likes, 10);
+    let likes = parseInt(icon.children[0].innerHTML, 10);
 
     postLike(likes, event);
 
