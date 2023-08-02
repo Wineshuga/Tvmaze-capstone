@@ -55,11 +55,10 @@ const popup = (indx, episodeData) => {
         username: userName.value,
         comment: userMsg.value,
       };
+      addComments(newComment);
       userName.value = '';
       userMsg.value = '';
       console.log(newComment);
-      const test = await addComments(newComment);
-      console.log(test);
     });
   });
 };

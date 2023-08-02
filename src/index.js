@@ -4,7 +4,6 @@ import fetchEpisodes from './modules/api.js';
 import displayEpisodesData from './modules/displaying-data.js';
 import seeMoreBtn from './modules/eventListeners.js';
 import updateLike from './modules/add-new-like.js';
-import addComments from './modules/addComments.js';
 
 const main = async () => {
   const displayData = await fetchEpisodes();
@@ -13,7 +12,6 @@ const main = async () => {
 
   updateLike();
 };
-addComments();
 
 main();
 
