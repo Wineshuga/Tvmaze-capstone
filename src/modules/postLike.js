@@ -1,7 +1,12 @@
-const postLike = async (newAppId, item1) => {
-  const likesUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${newAppId}/likes`;
-  const likesClass = document.querySelectorAll('.episodes-div > p');
-  const likes = likesClass[0].textContent;
+import uniqueId from "..";
+
+const postLike = async (likes, event) => {
+    const newAppId = await uniqueId();
+  const item1Url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${newAppId}/likes`;
+  const item1Class = document.querySelectorAll('.episodes-div > p');
+
+  
+  const item1 = event.target.parentElement.clasName;
   const requestData = {
     method: 'POST',
     headers: {
@@ -9,11 +14,11 @@ const postLike = async (newAppId, item1) => {
     },
     body: JSON.stringify({
       item_id: item1,
-      likes,
+      likes: likes,
     }),
   };
 
-  const response = await fetch(likesUrl, requestData);
+  const response = await fetch(item1Url, requestData);
   console.log(response);
   const responseData = await response.json();
   console.log('Response:', responseData);

@@ -6,8 +6,6 @@ import createNewApp from './modules/involvementAPI.js';
 import postLike from './modules/postLike.js';
 import updateLike from './modules/add-new-like';
 
-const likes = 0;
-
 const uniqueId = async () => {
   if (localStorage.getItem('uniqueId')) {
     return localStorage.getItem('uniqueId');
@@ -24,8 +22,6 @@ const main = async () => {
   seeMoreBtn();
 
   const item1 = localStorage.getItem('uniqueId');
-
-  postLike(newAppId, item1, likes);
   updateLike();
 };
 
