@@ -55,7 +55,6 @@ footer {
 }
 
 .episodes-div {
-  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,6 +62,7 @@ footer {
   gap: 0.5rem;
   border: 1px solid black;
   padding: 2rem;
+  font-family: 'Lora', serif;
 }
 
 button {
@@ -78,7 +78,8 @@ button {
   font-style: italic;
 }
 
-.hidden {
+.hidden,
+.popup--hide {
   display: none;
 }
 
@@ -104,4 +105,51 @@ button {
 
 .fa-heart.active {
   color: red;
+}
+
+.popup {
+  background-color: #f0f0f0;
+  padding: 1rem 2rem;
+  display: block;
+  width: 80vw;
+  position: absolute;
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+}
+
+.popup > div {
+  width: 80%;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.popup img {
+  width: 100%;
+}
+
+.popup h2 {
+  text-align: center;
+}
+
+.popup > div > ul {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-box {
+  margin-top: 1rem;
+}
+
+.close-icon {
+  float: right;
+  font-size: 2rem;
+}
+
+.comment-form > * {
+  display: block;
+  width: 50%;
+  padding: 0.5rem;
+  margin: 1rem auto;
 }
