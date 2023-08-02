@@ -14,4 +14,13 @@ const addComments = async (newComment) => {
   console.log(response);
 };
 
-export default addComments;
+const getComments = async (itemId) => {
+  const appId = await uniqueId();
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${itemId}`;
+
+  const response = await fetch(url);
+  const result = await response.json();
+  console.log(result);
+};
+
+export { addComments, getComments };
