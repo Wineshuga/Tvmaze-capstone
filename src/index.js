@@ -6,7 +6,6 @@ import seeMoreBtn from './modules/eventListeners.js';
 import updateLike from './modules/add-new-like.js';
 
 const main = async () => {
-
   const displayData = await fetchEpisodes();
   displayEpisodesData(displayData);
   seeMoreBtn();
