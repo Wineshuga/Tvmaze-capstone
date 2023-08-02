@@ -4,13 +4,14 @@ import fetchEpisodes from './modules/api.js';
 import displayEpisodesData from './modules/displaying-data.js';
 import seeMoreBtn from './modules/eventListeners.js';
 import updateLike from './modules/add-new-like.js';
+import getLikes from './modules/like-counter.js';
 
 const main = async () => {
   const displayData = await fetchEpisodes();
   displayEpisodesData(displayData);
   seeMoreBtn();
-
   updateLike();
+  getLikes();
 };
 
 main();
