@@ -2,10 +2,7 @@ import uniqueId from "..";
 
 const postLike = async (likes, event) => {
     const newAppId = await uniqueId();
-  const item1Url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${newAppId}/likes`;
-  const item1Class = document.querySelectorAll('.episodes-div > p');
-
-  
+  const item1Url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${newAppId}/likes`;  
   const item1 = event.target.parentElement.clasName;
   const requestData = {
     method: 'POST',

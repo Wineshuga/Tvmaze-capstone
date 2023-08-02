@@ -1,26 +1,30 @@
 import postLike from './postLike.js';
 
 const updateLike = async () => {
-    const likeIcon = document.querySelectorAll('.fa-heart');
-    let likes = 0;
+    const likeIcons = document.querySelectorAll('.fa-heart');
 
     function iconClicked(event) {
         const icon = event.target;
-        postLike(likes, event);
-        icon.classList.toggle('active');
         const pElement = icon.parentNode;
         const likeCountElement = pElement.querySelector('.like-count');
-        if (icon.className === 'fas fa-heart active') {
+
+        let likes = parseInt(icon.dataset.likes);
+
+        postLike(likes, event);
+
+        icon.classList.toggle('active');
+
+        if (icon.classList.contains('active')) {
             likes += 1;
-            likeCountElement.textContent = likes;
-        } else if (icon.className === 'fas fa-heart') {
+        } else {
             likes -= 1;
-            likeCountElement.textContent = likes;
         }
+
+        icon.dataset.likes = likes;
+        likeCountElement.textContent = likes;
     }
 
-
-    likeIcon.forEach((individualIcon) => {
+    likeIcons.forEach((individualIcon) => {
         individualIcon.addEventListener('click', (event) => {
             iconClicked(event);
         });
