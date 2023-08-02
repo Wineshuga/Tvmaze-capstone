@@ -1,4 +1,4 @@
-import addComments from './addComments.js';
+import addComments from './commentApi.js';
 
 const popup = (indx, episodeData) => {
   const popupContainer = document.querySelector('.popup--hide');
