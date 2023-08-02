@@ -13,7 +13,6 @@ const fetchEpisodes = async () => {
     airdate: episode.airdate,
   }));
 
-  console.log(episodesData);
   return episodesData;
 };
 

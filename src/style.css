@@ -1,9 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:ital@0;1&display=swap');
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cinzel', serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Cinzel', serif;
+  background-color: #fc7b48;
+  color: #493162;
+  padding: 1rem;
+}
+
+.logo-img {
+  width: 6rem;
+}
+
+.nav--lists {
+  display: flex;
+  gap: 3rem;
+  list-style-type: none;
+  font-size: 24px;
+}
+
 footer {
   background-color: #f0f0f0;
   padding: 1rem;
   text-align: center;
   bottom: 0;
   width: 100%;
+  font-family: 'Lora', serif;
 }
 
 #main-container {
@@ -15,7 +55,6 @@ footer {
 }
 
 .episodes-div {
-  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,6 +62,7 @@ footer {
   gap: 0.5rem;
   border: 1px solid black;
   padding: 2rem;
+  font-family: 'Lora', serif;
 }
 
 button {
@@ -38,10 +78,58 @@ button {
   font-style: italic;
 }
 
-.hidden {
+.hidden,
+.popup--hide {
   display: none;
 }
 
 .visible {
   display: flex;
+}
+
+.popup {
+  background-color: #f0f0f0;
+  padding: 1rem 2rem;
+  display: block;
+  width: 80vw;
+  position: absolute;
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+}
+
+.popup > div {
+  width: 80%;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.popup img {
+  width: 100%;
+}
+
+.popup h2 {
+  text-align: center;
+}
+
+.popup > div > ul {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-box {
+  margin-top: 1rem;
+}
+
+.close-icon {
+  float: right;
+  font-size: 2rem;
+}
+
+.comment-form > * {
+  display: block;
+  width: 50%;
+  padding: 0.5rem;
+  margin: 1rem auto;
 }
