@@ -16,10 +16,8 @@ const popup = (indx, episodeData) => {
         </ul>
         <section class='comment-box'>
         <h2>Comments (<span>0</span>)</h2>
-        <ul>
-          <li>03/04/2023 Agneta: This is my favorite episode</li>
-          <li>06/04/2023 Winnie: Fantastic!</li>
-        </ul>
+        <section class='comment-section'>
+        </section>
 
         <h2>Add a Comment</h2>
         <form data-index=${index} class='comment-form'>
@@ -56,11 +54,25 @@ const popup = (indx, episodeData) => {
         comment: userMsg.value,
       };
       addComments(newComment);
-      const comments = getComments(formIndex);
-      console.log(comments);
+      console.log(newComment);
       userName.value = '';
       userMsg.value = '';
-      console.log(newComment);
+
+      getComments(formIndex).then((data) => {
+        const commentData = data;
+        console.log(commentData);
+        const ul = document.createElement('ul');
+        ul.className = '.comment-list';
+        commentData.forEach((data) => {
+          console.log(data);
+          ul.innerHTML += `
+          <li>${data.creation_date} ${data.username}: ${data.comment}</li>
+        `;
+        });
+        const commentSec = document.querySelector('.comment-section');
+        commentSec.innerHTML = '';
+        commentSec.appendChild(ul);
+      });
     });
   });
 };
