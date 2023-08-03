@@ -122,11 +122,11 @@ button:hover {
   padding: 1rem 2rem;
   display: block;
   width: 100vw;
+  height: 100vh;
   position: fixed;
   overflow: scroll;
   top: 0;
   bottom: 0;
-  margin: 1rem;
   border: 1px solid black;
 }
 
