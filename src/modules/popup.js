@@ -1,4 +1,5 @@
-import { addComments, getComments } from './commentApi.js';
+import displayComments from './displayComments.js';
+import postComments from './postComments.js';
 
 const popup = (indx, episodeData) => {
   const popupContainer = document.querySelector('.popup--hide');
@@ -40,39 +41,13 @@ const popup = (indx, episodeData) => {
     popupContainer.className = 'popup--hide';
   });
 
+  displayComments(indx);
+
   const form = document.querySelectorAll('.comment-form');
   form.forEach((form) => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      const formIndex = e.target.getAttribute('data-index');
-      const userName = document.querySelector('input[type=text]');
-      const userMsg = document.querySelector('textarea');
-      const newComment = {
-        item_id: formIndex,
-        username: userName.value,
-        comment: userMsg.value,
-      };
-      addComments(newComment);
-      console.log(newComment);
-      userName.value = '';
-      userMsg.value = '';
-
-      getComments(formIndex).then((data) => {
-        const commentData = data;
-        console.log(commentData);
-        const ul = document.createElement('ul');
-        ul.className = '.comment-list';
-        commentData.forEach((data) => {
-          console.log(data);
-          ul.innerHTML += `
-          <li>${data.creation_date} ${data.username}: ${data.comment}</li>
-        `;
-        });
-        const commentSec = document.querySelector('.comment-section');
-        commentSec.innerHTML = '';
-        commentSec.appendChild(ul);
-      });
+      postComments(e);
     });
   });
 };

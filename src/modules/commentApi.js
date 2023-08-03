@@ -18,10 +18,18 @@ const getComments = async (itemId) => {
   const appId = await uniqueId();
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${appId}/comments?item_id=${itemId}`;
 
-  const response = await fetch(url);
-  const result = await response.json();
-  console.log(result);
-  return result;
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+    console.log(result);
+    return result;
+  } catch (error) {
+    if (error instanceof TypeError && error.message === "'item_id' not found.") {
+      console.log(error);
+      return [];
+    }
+    throw error;
+  }
 };
 
 export { addComments, getComments };
