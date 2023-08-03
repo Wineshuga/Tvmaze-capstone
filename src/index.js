@@ -6,7 +6,7 @@ import seeMoreBtn from './modules/eventListeners.js';
 import updateLike from './modules/add-new-like.js';
 import getLikes from './modules/likes-fetch.js';
 import displayHearts from './modules/likes-counter.js';
-import itemCounter from './modules/item-counter';
+import itemCounter from './modules/item-counter.js';
 
 const main = async () => {
   const displayData = await fetchEpisodes();
