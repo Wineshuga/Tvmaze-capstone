@@ -11,7 +11,7 @@ const addComments = async (newComment) => {
     },
     body: JSON.stringify(newComment),
   });
-  console.log(response);
+  return response;
 };
 
 const getComments = async (itemId) => {
@@ -21,11 +21,9 @@ const getComments = async (itemId) => {
   try {
     const response = await fetch(url);
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
     if (error instanceof TypeError && error.message === "'item_id' not found.") {
-      console.log(error);
       return [];
     }
     throw error;

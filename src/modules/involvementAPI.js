@@ -12,7 +12,6 @@ const createNewApp = async () => {
   };
   const response = await fetch(endpoint, requestData);
   const uniqueId = await response.text();
-  console.log(uniqueId);
   localStorage.setItem('uniqueId', uniqueId);
 };
 

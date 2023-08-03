@@ -13,7 +13,6 @@ const postComments = async (e) => {
   };
 
   await addComments(newComment);
-  console.log(newComment);
   userName.value = '';
   userMsg.value = '';
   displayComments(formIndex);

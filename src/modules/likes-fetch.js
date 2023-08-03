@@ -10,7 +10,6 @@ const getLikes = async () => {
     likes: element.likes,
   }));
 
-  console.log(likesAndIdsArray);
   return likesAndIdsArray;
 };
 

@@ -16,7 +16,7 @@ const postLike = async (likes, event) => {
   };
 
   const response = await fetch(item1Url, requestData);
-  console.log(response);
+  return response;
 };
 
 export default postLike;
