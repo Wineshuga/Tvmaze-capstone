@@ -1,9 +1,8 @@
 import postLike from './postLike.js';
 
-const updateLike = async () => {
-  const likeIcons = document.querySelectorAll('.fa-heart');
+const updateLike = async (event) => {
 
-  function iconClicked(event) {
+  
     const icon = event.target;
     const pElement = icon.parentNode;
     const likeCountElement = pElement.querySelector('.like-count');
@@ -21,13 +20,8 @@ const updateLike = async () => {
 
     icon.dataset.likes = likes;
     likeCountElement.textContent = likes;
-  }
+  
 
-  likeIcons.forEach((individualIcon) => {
-    individualIcon.addEventListener('click', (event) => {
-      iconClicked(event);
-    });
-  });
 };
 
 export default updateLike;

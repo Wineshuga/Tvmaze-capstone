@@ -12,13 +12,23 @@ const main = async () => {
   const displayData = await fetchEpisodes();
   displayEpisodesData(displayData);
   seeMoreBtn();
-  updateLike();
-  getLikes();
   displayHearts();
   itemCounter();
+
+  const likeIcons = document.querySelectorAll('.fa-heart');
+likeIcons.forEach((individualIcon) => {
+  individualIcon.addEventListener('click', (event) => {
+    updateLike(event);
+  });
+});
+
 };
 
 main();
+
+
+
+
 
 const headerLogo = document.querySelector('#logo');
 headerLogo.src = image;
