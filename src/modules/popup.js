@@ -1,3 +1,5 @@
+import addComments from './addComments.js';
+
 const popup = (indx, episodeData) => {
   const popupContainer = document.querySelector('.popup--hide');
   episodeData.forEach((episode, index) => {
@@ -20,10 +22,10 @@ const popup = (indx, episodeData) => {
         </ul>
 
         <h2>Add a Comment</h2>
-        <form class='comment-form'>
-          <input type='text' name='name' id='name' placeholder='Your name'>
-          <textarea col=30 rows='10' name='insights' placeholder='Your insights'></textarea>
-          <input type='button' value='Comment'>
+        <form data-index=${index} class='comment-form'>
+          <input type='text' name='name' id='name' placeholder='Your name' required>
+          <textarea col=30 rows='10' name='insights' placeholder='Your insights' required></textarea>
+          <input type='submit' value='Comment'>
         </form>
       </section>
       </div>
@@ -38,6 +40,26 @@ const popup = (indx, episodeData) => {
   closeIcon.addEventListener('click', () => {
     popupContainer.innerHTML = '';
     popupContainer.className = 'popup--hide';
+  });
+
+  const form = document.querySelectorAll('.comment-form');
+  form.forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formIndex = e.target.getAttribute('data-index');
+      const userName = document.querySelector('input[type=text]');
+      const userMsg = document.querySelector('textarea');
+      const newComment = {
+        item_id: formIndex,
+        username: userName.value,
+        comment: userMsg.value,
+      };
+      addComments(newComment);
+      userName.value = '';
+      userMsg.value = '';
+      console.log(newComment);
+    });
   });
 };
 
