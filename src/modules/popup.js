@@ -1,3 +1,4 @@
+import commentsCounter from '../commentsCounter.js';
 import displayComments from './displayComments.js';
 import postComments from './postComments.js';
 
@@ -16,7 +17,7 @@ const popup = (indx, episodeData) => {
           <li><strong>Rating</strong>: ${episode.rating.average}</li>
         </ul>
         <section class='comment-box'>
-        <h2>Comments (<span>0</span>)</h2>
+        <h2>Comments (<span class='comment-counter'>0</span>)</h2>
         <section class='comment-section'>
         </section>
 
@@ -42,6 +43,7 @@ const popup = (indx, episodeData) => {
   });
 
   displayComments(indx);
+  commentsCounter(indx);
 
   const form = document.querySelectorAll('.comment-form');
   form.forEach((form) => {

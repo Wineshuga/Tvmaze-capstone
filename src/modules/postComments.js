@@ -1,5 +1,6 @@
 import { addComments } from './commentApi.js';
 import displayComments from './displayComments.js';
+import commentsCounter from '../commentsCounter.js';
 
 const postComments = async (e) => {
   const formIndex = e.target.getAttribute('data-index');
@@ -16,6 +17,7 @@ const postComments = async (e) => {
   userName.value = '';
   userMsg.value = '';
   displayComments(formIndex);
+  e.target.parentNode.children[0].children.innerHTML = commentsCounter(formIndex) + 1;
 };
 
 export default postComments;
