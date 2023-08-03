@@ -1,4 +1,5 @@
-import addComments from './addComments.js';
+import displayComments from './displayComments.js';
+import postComments from './postComments.js';
 
 const popup = (indx, episodeData) => {
   const popupContainer = document.querySelector('.popup--hide');
@@ -16,10 +17,8 @@ const popup = (indx, episodeData) => {
         </ul>
         <section class='comment-box'>
         <h2>Comments (<span>0</span>)</h2>
-        <ul>
-          <li>03/04/2023 Agneta: This is my favorite episode</li>
-          <li>06/04/2023 Winnie: Fantastic!</li>
-        </ul>
+        <section class='comment-section'>
+        </section>
 
         <h2>Add a Comment</h2>
         <form data-index=${index} class='comment-form'>
@@ -42,23 +41,13 @@ const popup = (indx, episodeData) => {
     popupContainer.className = 'popup--hide';
   });
 
+  displayComments(indx);
+
   const form = document.querySelectorAll('.comment-form');
   form.forEach((form) => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-
-      const formIndex = e.target.getAttribute('data-index');
-      const userName = document.querySelector('input[type=text]');
-      const userMsg = document.querySelector('textarea');
-      const newComment = {
-        item_id: formIndex,
-        username: userName.value,
-        comment: userMsg.value,
-      };
-      addComments(newComment);
-      userName.value = '';
-      userMsg.value = '';
-      console.log(newComment);
+      postComments(e);
     });
   });
 };
