@@ -26,6 +26,9 @@
 
 The TV maze capstone is a pair-programing capstone project, reflecting all the material we have learnet and applied into this app. It has been set up with webpack, ES6 modules, and we have used API's to complete this project
 
+- [Click me to view project presentation video!](https://drive.google.com/file/d/1WEbfs3j7Q2SFvY4lGL1Fjmo9_bP4udJn/view?usp=drive_link)
+
+
 ## 🛠 Built With <a name="built-with"></a>
 
 <details>
@@ -48,7 +51,7 @@ The TV maze capstone is a pair-programing capstone project, reflecting all the m
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Click me to view deployed project!](project has not been deployed yet)
+- [Click me to view deployed project!](https://wineshuga.github.io/Tvmaze-capstone/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
