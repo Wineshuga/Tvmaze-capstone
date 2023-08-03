@@ -121,8 +121,8 @@ button:hover {
   background-color: #f0f0f0;
   padding: 1rem 2rem;
   display: block;
-  width: 80vw;
-  position: absolute;
+  width: 100vw;
+  position: fixed;
   overflow: scroll;
   top: 0;
   bottom: 0;
