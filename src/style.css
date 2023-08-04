@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:ital@0;1&display=swap');
+
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+  font-family: 'Cinzel', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cinzel', serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Cinzel', serif;
+  background-color: #fc7b48;
+  color: #493162;
+  padding: 1rem;
+}
+
+.nav--lists {
+  display: flex;
+  gap: 3rem;
+  list-style-type: none;
+  font-size: 24px;
+}
+
+footer {
+  background-color: #fc7b48;
+  color: #493162;
+  padding: 1rem;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+#main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.episodes-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #767474;
+  box-shadow: 1px 1px 10px rgb(181, 174, 174);
+  padding: 2rem;
+  width: 27rem;
+  background-color: rgb(240, 240, 240);
+}
+
+button {
+  background-color: whitesmoke;
+  box-shadow: 4px 1px 10px rgb(181, 174, 174);
+  width: 7rem;
+  height: 2rem;
+}
+
+button:hover {
+  background-color: white;
+  box-shadow: 1px 1px 10px black;
+}
+
+#see-more {
+  grid-column: 1 /span 3;
+  height: 3rem;
+  width: 15rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.hidden,
+.popup--hide {
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.fa-heart {
+  color: lightslategray;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.episodes-div > p {
+  font-size: 1.2rem;
+}
+
+.like-count {
+  color: black;
+  font-size: 0.7rem;
+  padding: 0 15px 0 15px;
+}
+
+.fa-heart.active {
+  color: red;
+}
+
+.popup {
+  background-color: #f0f0f0;
+  padding: 1rem 2rem;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  bottom: 0;
+  border: 1px solid black;
+}
+
+.popup > div {
+  width: 80%;
+  margin: auto;
+  line-height: 1.5;
+}
+
+.popup img {
+  width: 100%;
+}
+
+.popup h2 {
+  text-align: center;
+}
+
+.popup > div > ul {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-box {
+  margin-top: 1rem;
+}
+
+.close-icon {
+  float: right;
+  font-size: 2rem;
+}
+
+.comment-form > * {
+  display: block;
+  width: 50%;
+  padding: 0.5rem;
+  margin: 1rem auto;
+}
+
+#logo {
+  width: 6rem;
+}
